@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio Fácil 01</title>
+</head>
+<body>
+    <h1> Exercicio 01: </h1>
+    <p> 1. Crie uma variável que contenha o seu nome. </p>
+    <p> 2. Imprima o seu nome na tela. </p>
+    <p> 3. Crie uma função que receba dois números como parâmetro e retorne a soma deles. </p>
+    <p> 4. Crie um loop que imprima os números de 1 a 10. </p>
+    <p> 5. Crie um formulário que permita ao usuário inserir o seu nome e e-mail. </p>
+
+    <hr/>
+
+    <h1>Formulário de Nome e E-mail</h1>
+
+    <form id="meuFormulario">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <br/>
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+        <br/>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <script>
+        var meuNome = 'Valentim' // Nro1
+        document.write('<p>1. Meu nome é: ' + meuNome + '</p>' ) // Nro2
+
+        function somarNumeros(num1, num2) // Função que recebe dois números e retorna a soma deles
+        {
+            return num1 + num2
+        }
+        // Loop de 1 a 10 que escreve na tela.
+        for (let i = 1; i <= 10; i++){
+            document.write("<p>" + i + "</p>")
+        }
+
+        // Função para capturar os valores do formulário quando ele for enviado    
+        document.getElementById("meuFormulario").addEventListener("submit", function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+            // Capturando os valores inseridos pelo usuário
+            var nome = document.getElementById("nome").value;
+            var email = document.getElementById("email").value;        
+            // Exibindo os valores capturados 
+            alert("Nome: " + nome + "\nE-mail: " + email);
+            })
+
+
+    </script>
+</body>
+</html>
