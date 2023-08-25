@@ -1,2 +1,2 @@
-puts "Hello Ruby!!!2"
-1 + 1545 - 15
+puts "Hello Ruby!!!"
+puts 1 + 2
