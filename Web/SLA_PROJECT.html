@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title> SLA PROJECT </title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+	function news(text) {console.log(text); }
+	var intervalo;	
+		
+	function tempo() {	
+		var dtinicio = Date.parse(new Date(2018, 2, 23, 8, 0, 0, 0));	
+		news(dtinicio);
+		var dtfim = Date.parse(new Date(2018, 11, 18, 16,0,0));
+		news(dtfim);
+		var diasFIM = dtfim - Date.parse(new Date());
+		news(diasFIM);
+		var s1 = 59;
+		var m1 = 59;
+		var h1 = 7;
+		var d1 = parseInt(((((diasFIM / 1000) / 60) / 60) / 24 ),10);
+						
+		intervalo = window.setInterval(function() {
+			
+			
+			
+			var diasAteAgora = Date.parse(new Date()) - dtinicio; 
+			news("Dias atÃ© agora: " + ((((diasAteAgora / 1000) / 60) / 60) / 24 ));
+			var s = (new Date()).getSeconds();
+			var m = (new Date()).getMinutes();
+			var h = (new Date()).getHours() - 8;
+			var d = parseInt(((((diasAteAgora / 1000) / 60) / 60) / 24 ),10);			
+			
+			if (h > 9) { h = 10; m = 0; s = 0; document.getElementById("hora").innerHTML = h + "h"; }else { document.getElementById("hora").innerHTML = "0" + h + "h"; }
+			if (s < 10) document.getElementById("segundo").innerHTML = "0" + s + "s"; else document.getElementById("segundo").innerHTML = s + "s";			
+			if (m < 10) document.getElementById("minuto").innerHTML = "0" + m + "m"; else document.getElementById("minuto").innerHTML = m + "m";		
+			if (d < 10) document.getElementById("dias").innerHTML = "0" + d + "d"; else document.getElementById("dias").innerHTML = d + "d";									
+			var Sla = Date.parse(new Date(2018, 11, 18, 16,0,0)) - Date.parse(new Date());						
+			news("SLA: " + ((((Sla / 1000) / 60) / 60) / 24 ));
+			
+			d1 = parseInt(((((Sla / 1000) / 60) / 60) / 24 ),10) - 1; document.getElementById("dias1").innerHTML = d1;
+			h1 =  17 - ((new Date()).getHours()); document.getElementById("hora1").innerHTML = h1;
+			m1 =  59 - m; document.getElementById("minuto1").innerHTML = m1;
+			s1 =  60 - s;	if (s1 = 60) s1 = 59; document.getElementById("segundo1").innerHTML = s1;
+					
+			
+			
+			if (d1 < 10) document.getElementById("dias1").innerHTML = "0" + d1 + "d"; else document.getElementById("dias1").innerHTML = d1 + "d";	
+			if (h1 < 10) document.getElementById("hora1").innerHTML = "0" + h1 + "h"; else document.getElementById("hora1").innerHTML = h1 + "h";			
+ 			news( "horas = " + h1);
+			document.getElementById("hora1").innerHTML = h1;
+			if (s1 < 10) document.getElementById("segundo1").innerHTML = "0" + s1 + "s"; else document.getElementById("segundo1").innerHTML = s1 + "s";
+			if (m1 < 10) document.getElementById("minuto1").innerHTML = "0" + m1 + "m"; else document.getElementById("minuto1").innerHTML = m1 + "m";
+			if (h1 <= 0) document.getElementById("hora1").innerHTML = "07"  + "h"; else document.getElementById("hora1").innerHTML = h1 + "h";
+			
+		},1000);
+	}
+	
+	
+	window.onload=tempo;
+
+</script>
+</head>
+<body>
+<table width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr><td width="99%" align=center>
+<FONT COLOR="#006666"><b>SLA do projeto OS DIGITAL</b></font>
+<BR/> <BR/></tr></table>
+<table cellspacing='0' cellpadding='5' align="center" class="border">
+<tr>
+	<td class="h3 mb-3 font-weight-normal"> 
+		<span id="dias">00d</span>
+		<span id="hora">00h</span>
+		<span id="minuto">00m</span>
+		<span id="segundo">00s</span>	
+	</td>	
+</tr>
+<tr>
+	<td class="h3 mb-3 font-weight-normal"> 
+		<span id="dias1">270d</span>
+		<span id="hora1">  </span>
+		<span id="minuto1">00m</span>
+		<span id="segundo1">00s</span>
+	</td>
+</tr>
+</table>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
